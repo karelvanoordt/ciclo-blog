@@ -15,8 +15,11 @@
 # gem "pg"
 #
 default: &default
+  username: postgres
+  password: 777KData
   adapter: postgresql
   encoding: unicode
+  host: localhost
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
