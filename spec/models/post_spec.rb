@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-
   describe 'GET /posts' do
     before(:each) { get '/users/:user_id/posts' }
 
