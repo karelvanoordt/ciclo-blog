@@ -26,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
 
 Run the command `git clone` followed by https://github.com/karelvanoordt/ciclo-blog.git
 
-cd ciclo-blog
+`cd ciclo-blog`
 
 
 ### Prerequisites
