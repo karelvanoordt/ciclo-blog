@@ -1,10 +1,10 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  belongs_to :user
   has_many :comments
   has_many :likes
 
   def show_recent_5_comments
-    comment.order('created_at Desc').limit(5)
+    comments.limit(5).order(created_at: :desc)
   end
 
   after_save :update_post_counter
