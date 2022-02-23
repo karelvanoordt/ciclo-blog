@@ -1,0 +1,21 @@
+.all-posts-body {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.post-link {
+    text-decoration: none;
+}
+
+.post-comments {
+    border: 2px solid black;
+    margin-top: -20px;
+}
+
+.pagination-btn {
+    width: 150px;
+    margin: auto;
+    text-decoration: none;
+}
