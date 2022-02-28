@@ -8,4 +8,7 @@ class Post < ApplicationRecord
     Comment.last(5)
   end
 
+  def update_posts_counter
+    post.increment!(:posts_counter)
+  end
 end
