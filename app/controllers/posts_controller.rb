@@ -23,11 +23,11 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if @new_post.save
-          redirect_to "users/#{@new_post.user.id}/posts/", notice: 'Success! Post Created'      
+          redirect_to "users/#{@new_post.user.id}/posts/", notice: 'Success! Post Created'
         else
           render :new, alert: 'An error ocurred'
-        end 
-      end 
+        end
+      end
     end
   end
 
@@ -36,5 +36,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
 end
