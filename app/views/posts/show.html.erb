@@ -1,45 +1,39 @@
-<div class='u-detail-body'>
-    <div class='u-detail-top'>
-        <div class='u-d-img'>
-            <%= image_tag 'image-placeholder.png', width: '150px', height: '150px' %>
+<div class='post-details-body'>
+    <div class='post-details-p-card'>
+        <div class='post-details-top'>
+            <h3>
+                <%= @post.title %> by <%= @post.user.name %>
+            </h3>
+
+            <div class='post-com-lik-counters'>
+                <p>
+                    Comments: <%= @post.comments_counter%>
+                </p>
+                <p>
+                    Likes: <%= @post.likes_counter%>
+                </p>
+            </div>
         </div>
         
-        <div class='u-detail-user'>
-            <h1 class='u-detail-user-name'>
-                <%= @user.name  %>
-            </h1>
-            <p class='u-detail-user-counter'>
-                Number of posts: <%= @user.posts_counter %>
-            </p>
-        </div>
-    </div>
+        <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
+            <%= form.submit "Like this post", class: "post-like-btn"%>
+        <% end %>
 
-    <div class='u-detail-bio'>
-        <h2>Bio</h2>
-        <p>
-            <%= @user.bio %>
+        <p class='post-details-text'>
+            <%= @post.text %>
         </p>
     </div>
 
-    <div class='u-detail-rec-posts'>
-        <% @user.recent_posts.each  do |post| %>
-            <div class='u-detail-rec-posts-card'>
-                <h2>
-                    Post: <%= post.title  %>
-                </h2>
-                <p>
-                    <%= post.text %>
-                </p>
-
-                <div class='com-lik-counters'>
-                    <p>Comments: <%= post.comments_counter %></p>
-                    <p>Likes: <%= post.likes_counter %></p>
-                </div>
-            </div>
+    <div class='post-details-p-comments'>
+        <% @comments.each do |comment| %>
+            <p>
+                <%= comment.user.name%>: <%= comment.text%>
+            </p>
         <% end %>
-
-        <button class='all-posts-btn'>
-            <%= link_to 'See all posts', user_posts_path(@user)%>
-        </button>
     </div>
+
+    <div class = 'comment-creator'>
+        <%= render partial: 'create_comments', local: { post: @post } %>
+    </div>
+
 </div>
