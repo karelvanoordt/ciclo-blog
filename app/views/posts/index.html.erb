@@ -14,6 +14,10 @@
         </div>
     </div>
 
+    <div class='create-post-cont'>
+        <%= link_to "Create new post", new_user_post_path %>
+    </div>
+
     <div class='u-detail-rec-posts'>
         <% @posts.each  do |post| %>
             <div class='u-detail-rec-posts-card'>
