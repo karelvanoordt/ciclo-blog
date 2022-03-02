@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Like model' do
+    subject { Like.new(user_id: 1, post_id: 1) }
+
+    before { subject.save }
+
+    it 'check if it increases the comments' do
+      old_likes_counter = Post.first(1).likes_counter
+      subject.update_likes_counter
+      expect(Post.first(1).likes_counter).to eq(old_likes_counter + 1)
+    end
+  end
 end
