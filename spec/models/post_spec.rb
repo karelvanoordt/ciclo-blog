@@ -31,6 +31,5 @@ RSpec.describe Post, type: :model do
     it 'validates the 5 recent comments' do
       expect(subject.recent_comments).to eq(subject.comments.last(5))
     end
-
   end
 end
