@@ -5,6 +5,10 @@ ruby '3.0.0'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'devise'
+
+gem 'bootstrap', '~> 4.2.1'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.2'
 
