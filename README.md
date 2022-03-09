@@ -64,6 +64,24 @@ Run tests `bundle exec rspec`
 - Twitter: [@karelvanoordt](https://twitter.com/karelvanoordt)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/karelvanoordt)
 
+## Author
+
+👤 **Munsa Mibenge**
+
+- GitHub: [@Munsa1](https://github.com/Munsa1)
+- Twitter: [@MibengeMunsa](https://twitter.com/MibengeMunsa)
+- LinkedIn: [munsa-mibenge](https://www.linkedin.com/in/munsa-mibenge/)
+
+
+## Author
+
+👤 **Stephan Annandale**
+
+- GitHub: [@stephan](https://github.com/sneeu-leeu)
+- Twitter: [@Stephan](https://twitter.com/Stephan07484055)
+- LinkedIn: [Stephan Annandale](https://www.linkedin.com/in/stephan-annandale-a4b4931a9/)
+
+
 
 
 ## 🤝 Contributing

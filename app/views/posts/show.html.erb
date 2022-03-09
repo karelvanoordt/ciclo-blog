@@ -29,11 +29,15 @@
             <p>
                 <%= comment.user.name%>: <%= comment.text%>
             </p>
+            <% if can? :destroy, comment %>
+                <%= button_to "Delete Comment", "/posts/:post_id/comments/#{params[:id]}", method: :delete, params: { comment_id: comment.id }, class: 'del' %>
+            <% end %>
+
         <% end %>
     </div>
 
     <div class = 'comment-creator'>
-        <%= render partial: 'create_comments', local: { post: @post } %>
+        <%= render "posts/create_comments" %>
     </div>
 
 </div>

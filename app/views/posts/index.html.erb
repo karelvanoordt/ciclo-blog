@@ -27,6 +27,10 @@
                 <p>
                     <%= post.text %>
                 </p>
+
+                <% if can? :destroy, post %>
+                    <%= button_to "Delete Post", user_post_path(@user.id, post.id), :method => :delete, class: 'del' %>
+                <% end %>
  
                 <div class='com-lik-counters'>
                     <p>Comments: <%= post.comments_counter %></p>
