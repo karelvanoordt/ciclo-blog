@@ -1,16 +1,10 @@
 require 'rails_helper'
-
-RSpec.feature "Logins", type: :feature do
+RSpec.feature 'Logins', type: :feature do
   background { visit new_user_session_path }
-  scenario 'displays email form field' do
+
+  scenario 'displays email, password form fields, and log in button' do
     expect(page).to have_field('user[email]')
-  end
-
-  scenario 'display password form field' do
     expect(page).to have_field('user[password]')
-  end
-
-  scenario 'display log in button' do
     expect(page).to have_button('Log in')
   end
 
@@ -29,7 +23,6 @@ RSpec.feature "Logins", type: :feature do
       click_button 'Log in'
       expect(page).to have_content 'Invalid Email or password.'
     end
-
     scenario 'Signup with correct data' do
       @user = User.create(name: 'Max', email: 'maxverstappen@redbull.com', password: 'worldchamp33')
       within 'form' do
@@ -39,10 +32,5 @@ RSpec.feature "Logins", type: :feature do
       click_button 'Log in'
       expect(page).to have_current_path(user_session_path)
     end
-
-
-  end 
-
-
-
+  end
 end
