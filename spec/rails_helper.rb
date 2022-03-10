@@ -38,6 +38,11 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  config.include Capybara::DSL
+
+  
+
+
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
