@@ -10,11 +10,18 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
+  after_create :generate_api_token
+
   def admin?(requested_role)
     role == requested_role.to_s
   end
 
   def recent_posts
     Post.last(3)
+  end
+
+  def generate_api_token
+    self.apitoken = Devise.friendly_token
+    save
   end
 end
