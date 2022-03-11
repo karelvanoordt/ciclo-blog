@@ -14,14 +14,11 @@ class ApplicationController < ActionController::Base
     end
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password) }
   end
-  
-  
+
   def authenticate_with_token
     return unless params[:apitoken]
 
     user = User.find_by_api_token(params[:apitoken])
     sign_in(user)
   end
-
-  
 end

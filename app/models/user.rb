@@ -24,5 +24,4 @@ class User < ApplicationRecord
     self.apitoken = Devise.friendly_token
     save
   end
-  
 end
